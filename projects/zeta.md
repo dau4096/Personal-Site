@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Beta
-permalink: /projects/beta/
+title: Zeta
+permalink: /projects/zeta/
 ---
 
-# Beta [β]
+# Zeta [ζ]
 ___
 
 This is a placeholder project page.

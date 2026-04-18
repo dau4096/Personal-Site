@@ -4,7 +4,7 @@ title: Gamma
 permalink: /projects/gamma/
 ---
 
-# Gamma
+# Gamma [γ]
 ___
 
 This is a placeholder project page.

@@ -4,7 +4,7 @@ title: Alpha
 permalink: /projects/alpha/
 ---
 
-# Alpha
+# Alpha [α]
 ___
 
 This is a placeholder project page.

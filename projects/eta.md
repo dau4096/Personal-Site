@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Beta
-permalink: /projects/beta/
+title: Eta
+permalink: /projects/eta/
 ---
 
-# Beta [β]
+# Eta [η]
 ___
 
 This is a placeholder project page.

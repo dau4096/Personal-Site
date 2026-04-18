@@ -4,7 +4,7 @@ title: Delta
 permalink: /projects/delta/
 ---
 
-# Delta
+# Delta [δ]
 ___
 
 This is a placeholder project page.

@@ -4,7 +4,7 @@ title: Epsilon
 permalink: /projects/epsilon/
 ---
 
-# Epsilon
+# Epsilon [ε]
 ___
 
 This is a placeholder project page.
