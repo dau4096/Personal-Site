@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Voxel-Renderer
-description: \"Teardown Project\".
+description: "Teardown Project\".
 image: /assets/embed.png
 permalink: /projects/voxel/
 ---

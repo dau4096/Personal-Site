@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Heightmap-Renderer
-description: \"Comanche Project\".
+description: "Comanche Project\".
 image: /assets/embed.png
 permalink: /projects/heightmap/
 ---

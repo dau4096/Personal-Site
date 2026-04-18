@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Parallax-Renderer
+description: Flat, but appears 3D.
+image: /assets/embed.png
 permalink: /projects/parallax/
 ---
 
