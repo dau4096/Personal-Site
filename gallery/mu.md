@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: gallery
 title: Mu [µ]
 description: Placeholder page.
 image: /assets/embed.png

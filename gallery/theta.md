@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: gallery
 title: Theta [θ]
 description: Placeholder page.
 image: /assets/embed.png

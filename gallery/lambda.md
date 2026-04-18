@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: gallery
 title: Lambda [λ]
 description: Placeholder page.
 image: /assets/embed.png

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: gallery
 title: Delta [δ]
 description: Placeholder page.
 image: /assets/embed.png

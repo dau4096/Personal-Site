@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: gallery
 title: Zeta [ζ]
 description: Placeholder page.
 image: /assets/embed.png

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: gallery
 title: Kappa [κ]
 description: Placeholder page.
 image: /assets/embed.png

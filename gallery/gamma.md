@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: gallery
 title: Gamma [γ]
 description: Placeholder page.
 image: /assets/embed.png

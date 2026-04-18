@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: gallery
 title: Alpha [α]
 description: Placeholder page.
 image: /assets/embed.png

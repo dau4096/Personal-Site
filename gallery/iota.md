@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: gallery
 title: Iota [ι]
 description: Placeholder page.
 image: /assets/embed.png

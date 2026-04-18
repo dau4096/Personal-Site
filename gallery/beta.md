@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: gallery
 title: Beta [β]
 description: Placeholder page.
 image: /assets/embed.png

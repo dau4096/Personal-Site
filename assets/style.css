@@ -34,3 +34,48 @@ footer {
   text-align: center;
   background: #C21F1F;
 }
+
+
+
+/* Gallery style */
+body.gallery main {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+body.gallery {
+  margin: 0;
+  background: #111111;
+  color: white;
+}
+
+header.minimal {
+  padding: 1rem;
+}
+
+header.minimal a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+  grid-auto-rows: 200px;
+  gap: 10px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* makes thumbnails uniform */
+  display: block;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}

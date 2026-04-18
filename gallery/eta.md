@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: gallery
 title: Eta [η]
 description: Placeholder page.
 image: /assets/embed.png

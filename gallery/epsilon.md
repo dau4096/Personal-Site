@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: gallery
 title: Epsilon [ε]
 description: Placeholder page.
 image: /assets/embed.png
