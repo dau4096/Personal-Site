@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Home
+description: Home Page
+image: /assets/embed.png
 permalink: /
 ---
 

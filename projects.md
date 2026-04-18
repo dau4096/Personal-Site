@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Projects
+description: Collection of projects
+image: /assets/embed.png
 permalink: /projects/
 ---
 

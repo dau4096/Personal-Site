@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Py-Graphics-Module
+description: OpenGL abstraction Python module.
+image: /assets/embed.png
 permalink: /projects/py-graphics-module/
 ---
 

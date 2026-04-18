@@ -1,6 +1,8 @@
 ---
 layout: default
 title: DThree-Source [C++]
+description: Discord bot written in C++.
+image: /assets/embed.png
 permalink: /projects/d6/
 ---
 

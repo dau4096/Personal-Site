@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Shader-Drawing
+description: Basic art program via GPU shaders.
+image: /assets/embed.png
 permalink: /projects/shader-drawing/
 ---
 

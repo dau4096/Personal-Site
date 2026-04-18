@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Software Rasteriser [CPU]
+description: Recreating the 1996 Quake-Span software renderer.
+image: /assets/embed.png
 permalink: /projects/quake-span/
 ---
 

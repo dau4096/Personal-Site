@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Software-Rasteriser [GPU]
+description: Recreating the modern 3D pipeline.
+image: /assets/embed.png
 permalink: /projects/software-rasteriser/
 ---
 

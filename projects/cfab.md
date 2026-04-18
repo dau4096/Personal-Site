@@ -1,6 +1,8 @@
 ---
 layout: default
 title: CFAB
+description: Mock ASM-like interpreted language.
+image: /assets/embed.png
 permalink: /projects/cfab/
 ---
 

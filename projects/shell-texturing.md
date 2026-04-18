@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Shell-Texturing
+description: \"Grass Project\".
+image: /assets/embed.png
 permalink: /projects/grass/
 ---
 

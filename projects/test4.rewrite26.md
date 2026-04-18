@@ -1,6 +1,8 @@
 ---
 layout: default
 title: test4 [R26]
+description: First project, revisted [2026]
+image: /assets/embed.png
 permalink: /projects/test4-r26/
 ---
 
