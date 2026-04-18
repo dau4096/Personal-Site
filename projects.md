@@ -8,9 +8,9 @@ permalink: /projects/
 ___
 
 ## List of projects;
-- [Alpha](/projects/alpha/)
-- [Beta](/projects/beta/)
-- [Gamma](/projects/gamma/)
-- [Delta](/projects/delta/)
-- [Epsilon](/projects/epsilon/)
+- [Alpha]({{ '/projects/alpha/' | relative_url }})
+- [Beta]({{ '/projects/beta/' | relative_url }})
+- [Gamma]({{ '/projects/gamma/' | relative_url }})
+- [Delta]({{ '/projects/delta/' | relative_url }})
+- [Epsilon]({{ '/projects/epsilon/' | relative_url }})
 
