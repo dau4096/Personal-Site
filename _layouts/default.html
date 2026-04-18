@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
 
 <body>
 
   <header>
-    <img src="/assets/banner.jpg" class="banner" alt="Testing Banner">
+    <img src="{{ '/assets/banner.jpg' | relative_url }}" class="banner">
 
     <nav>
-      <a href="/Personal-Site/index.md">Home</a>
-      <a href="/Personal-Site/projects.md">Projects</a>
+      <a href="/">Home</a>
+      <a href="/projects/">Projects</a>
     </nav>
   </header>
 
