@@ -8,5 +8,6 @@ permalink: /projects/quake-span/
 
 # Software Rasteriser [Quake-Span]
 _Using the Quake Span method from 1996._
+___
 
 __[PLACEHOLDER]__

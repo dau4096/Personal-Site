@@ -8,5 +8,6 @@ permalink: /projects/software-rasteriser/
 
 # Software-Rasteriser [GPU]
 _Recreating the modern 3D pipeline in shaders._
+___
 
 __[PLACEHOLDER]__

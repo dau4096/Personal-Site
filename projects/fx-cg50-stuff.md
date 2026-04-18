@@ -8,5 +8,6 @@ permalink: /projects/fx-cg50/
 
 # Raycasting-Renderer
 _Collection of CASIO fx-CG50 Projects_
+___
 
 __[PLACEHOLDER]__

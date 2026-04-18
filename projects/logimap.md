@@ -8,5 +8,6 @@ permalink: /projects/logimap/
 
 # LogiMap
 _HDL on the GPU_
+___
 
 __[PLACEHOLDER]__

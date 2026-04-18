@@ -8,5 +8,6 @@ permalink: /projects/parallax/
 
 # Parallax-Renderer
 _Flat, But looks 3D!_
+___
 
 __[PLACEHOLDER]__

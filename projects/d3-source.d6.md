@@ -8,5 +8,6 @@ permalink: /projects/d6/
 
 # DThree-Source [C++]
 _Discord Bot_
+___
 
 __[PLACEHOLDER]__

@@ -8,5 +8,6 @@ permalink: /projects/voxel/
 
 # Voxel-Renderer
 _"Teardown Project"_
+___
 
 __[PLACEHOLDER]__

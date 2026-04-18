@@ -8,5 +8,6 @@ permalink: /projects/d3/
 
 # DThree-Source [PYTHON]
 _Discord Bot_
+___
 
 __[PLACEHOLDER]__

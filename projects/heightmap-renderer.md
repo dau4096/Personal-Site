@@ -8,5 +8,6 @@ permalink: /projects/heightmap/
 
 # Heightmap-Renderer
 _"Comanche Project"_
+___
 
 __[PLACEHOLDER]__

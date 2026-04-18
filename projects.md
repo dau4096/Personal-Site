@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Projects
-description: Collection of projects
+description: Collection of projects.
 image: /assets/embed.png
 permalink: /projects/
 ---
@@ -23,12 +23,14 @@ _Any project relating to graphics, or visual output._
 - [Shader-Drawing (Basic art program via shaders)]({{ '/projects/shader-drawing/' | relative_url }})
 - [Parallax-Mapping (Flat, but appears 3D)]({{ '/projects/parallax/' | relative_url }})
 
+
 ## Computational;
 _Exercises centred around non-graphical data processing, usually on the CPU._
 - [CFAB (Mock ASM-like interpreted language)]({{ '/projects/cfab/' | relative_url }})
 - [LogiMap (HDL on the GPU)]({{ '/projects/logimap/' | relative_url }})
 - [DThree (Discord bot, Old Python ver.)]({{ '/projects/d3/' | relative_url }})
 - [DSix (Discord bot, New C++ ver.)]({{ '/projects/d6/' | relative_url }})
+
 
 ## Miscellaneous;
 _Anything I did that doesn't fall under the prior categories._

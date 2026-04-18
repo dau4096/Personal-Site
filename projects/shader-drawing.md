@@ -8,5 +8,6 @@ permalink: /projects/shader-drawing/
 
 # Shader-Drawing
 _Arts on the GPU_
+___
 
 __[PLACEHOLDER]__

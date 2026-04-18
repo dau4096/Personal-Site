@@ -8,5 +8,6 @@ permalink: /projects/grass/
 
 # Shell-Texturing
 _Why touch grass when I could simulate it?_
+___
 
 __[PLACEHOLDER]__
