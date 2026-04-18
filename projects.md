@@ -5,6 +5,12 @@ permalink: /projects/
 ---
 
 # Projects
+___
 
-- Project A
-- Project B
+## List of projects;
+- [Alpha](/projects/alpha/)
+- [Beta](/projects/beta/)
+- [Gamma](/projects/gamma/)
+- [Delta](/projects/delta/)
+- [Epsilon](/projects/epsilon/)
+

@@ -4,6 +4,9 @@ title: Home
 permalink: /
 ---
 
-# Test
+# Home
+___
+## _Site WIP_
 
-Testing text
+Currently trying to figure out how this works :) \
+Assets not final.
