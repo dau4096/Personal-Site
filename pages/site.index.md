@@ -10,5 +10,5 @@ permalink: /
 ___
 ## _Site WIP_
 
-Currently trying to figure out how this works :) \
+Currently trying to figure out how this works :)
 Assets not final.
