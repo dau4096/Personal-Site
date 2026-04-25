@@ -125,13 +125,18 @@ def audioIndex() -> str:
 
 
 @app.route("/audio/<dir>/<name>/")
-def audioFile(dir:str, name:str) -> str:
+def audioPage(dir:str, name:str) -> str:
 	meta = {
 		"title": name,
 		"description": "Audio Playback",
 		"image": "/static/embed.png"
 	};
 	return flask.render_template("audio.html", meta=meta, file=f"{AUDIO_DIR}/{dir}/{name}.mp3");
+
+
+@app.route("/audio/<dir>/<name>.mp3")
+def audioFile(dir:str, name:str):
+    return flask.send_from_directory("static/audio", f"{dir}/{name}.mp3");
 
 
 
