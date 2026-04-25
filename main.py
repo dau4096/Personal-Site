@@ -7,9 +7,14 @@ import os;
 
 app = flask.Flask(__name__);
 
-PAGES_DIR:str = "pages";
-PROJECTS_DIR:str = "pages/projects";
-GALLERY_DIR:str = "pages/gallery";
+
+PAGES_DIR:str = "/pages";
+PROJECTS_DIR:str = "/pages/projects";
+GALLERY_DIR:str = "/pages/gallery";
+POSTS_DIR:str = "/pages/posts";
+AUDIO_DIR:str = "/static/audio";
+
+
 
 def loadMD(path:str) -> tuple[str, str]|None:
 	if (not os.path.exists(path)): return None;
@@ -45,45 +50,92 @@ def genericPage(pageName:str) -> str:
 #Projects
 @app.route("/projects/")
 def projectIndex() -> str:
-    path:str = f"{PAGES_DIR}/projects.index.md";
-    pageMD = loadMD(path);
-    if (pageMD is None): flask.abort(404);
+	path:str = f"{PAGES_DIR}/projects.index.md";
+	pageMD = loadMD(path);
+	if (pageMD is None): flask.abort(404);
 
-    (meta, content) = pageMD;
-    return flask.render_template("default.html", meta=meta, content=content);
+	(meta, content) = pageMD;
+	return flask.render_template("default.html", meta=meta, content=content);
 
 
 @app.route("/projects/<name>/")
 def projectPage(name:str) -> str:
-    path:str = f"{PROJECTS_DIR}/{name}.md";
-    pageMD = loadMD(path);
-    if (pageMD is None): flask.abort(404);
+	path:str = f"{PROJECTS_DIR}/{name}.md";
+	pageMD = loadMD(path);
+	if (pageMD is None): flask.abort(404);
 
-    (meta, content) = pageMD;
-    return flask.render_template("default.html", meta=meta, content=content);
+	(meta, content) = pageMD;
+	return flask.render_template("default.html", meta=meta, content=content);
 
 
 
 #Gallery
 @app.route("/gallery/")
 def galleryIndex() -> str:
-    path:str = f"{PAGES_DIR}/gallery.index.md";
-    pageMD = loadMD(path);
-    if (pageMD is None): flask.abort(404);
+	path:str = f"{PAGES_DIR}/gallery.index.md";
+	pageMD = loadMD(path);
+	if (pageMD is None): flask.abort(404);
 
-    (meta, content) = pageMD;
-    return flask.render_template("default.html", meta=meta, content=content);
+	(meta, content) = pageMD;
+	return flask.render_template("default.html", meta=meta, content=content);
 
 
 @app.route("/gallery/<name>/")
 def galleryPage(name:str) -> str:
-    path:str = f"{GALLERY_DIR}/{name}.md";
-    pageMD:str = loadMD(path);
-    if (pageMD is None): flask.abort(404);
+	path:str = f"{GALLERY_DIR}/{name}.md";
+	pageMD:str = loadMD(path);
+	if (pageMD is None): flask.abort(404);
 
-    (meta, content) = pageMD;
-    return flask.render_template("gallery.html", meta=meta, content=content);
+	(meta, content) = pageMD;
+	return flask.render_template("gallery.html", meta=meta, content=content);
+
+
+
+#Posts
+@app.route("/posts/")
+def postsIndex() -> str:
+	path:str = f"{PAGES_DIR}/posts.index.md";
+	pageMD = loadMD(path);
+	if (pageMD is None): flask.abort(404);
+
+	(meta, content) = pageMD;
+	return flask.render_template("default.html", meta=meta, content=content);
+
+
+@app.route("/posts/<name>/")
+def postPage(name:str) -> str:
+	path:str = f"{POSTS_DIR}/{name}.md";
+	pageMD:str = loadMD(path);
+	if (pageMD is None): flask.abort(404);
+
+	(meta, content) = pageMD;
+	return flask.render_template("default.html", meta=meta, content=content);
+
+
+
+#Audio
+@app.route("/audio/")
+def audioIndex() -> str:
+	path:str = f"{PAGES_DIR}/audio.index.md";
+	pageMD = loadMD(path);
+	if (pageMD is None): flask.abort(404);
+
+	(meta, content) = pageMD;
+	return flask.render_template("default.html", meta=meta, content=content);
+
+
+@app.route("/audio/<dir>/<name>/")
+def audioFile(dir:str, name:str) -> str:
+	meta = {
+		"title": name,
+		"description": "Audio Playback",
+		"image": "/static/embed.png"
+	};
+	return flask.render_template("audio.html", meta=meta, file=f"{AUDIO_DIR}/{dir}/{name}.mp3");
+
+
+
 
 
 if (__name__ == "__main__"):
-    app.run(debug=True);
+	app.run(debug=True);
