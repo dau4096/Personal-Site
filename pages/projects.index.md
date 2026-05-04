@@ -22,8 +22,10 @@ _Any project relating to graphics, or visual output._
 - [test4-Rewrite (First 3D project revisited)](/projects/test4.rewrite26/)
 - [Shader-Drawing (Basic art program via shaders)](/projects/shader-drawing/)
 - [Parallax-Mapping (Flat, but appears 3D)](/projects/parallax-mapping/)
+- [BSP-Renderer (DOOM-1993 rendering)](/projects/bsp-rendering/)
 
 
+___
 ## Computational;
 _Exercises centred around non-graphical data processing, usually on the CPU._
 - [CFAB (Mock ASM-like interpreted language)](/projects/cfab/)
@@ -32,6 +34,7 @@ _Exercises centred around non-graphical data processing, usually on the CPU._
 - [DSix (Discord bot, New C++ ver.)](/projects/d3-source.d6/)
 
 
+___
 ## Miscellaneous;
 _Anything I did that doesn't fall under the prior categories._
 - [Stormworks-VR (Hacky VR)](/projects/stormworks-vr/)
