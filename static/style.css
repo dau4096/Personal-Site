@@ -3,6 +3,14 @@ body {
   font-family: system-ui, sans-serif;
 }
 
+body a {
+  color: #465362;
+  font-weight: bolder;
+  text-decoration: none;
+  font-style: italic;
+}
+
+
 .banner {
   width: 100%;
   height: 128px;
@@ -14,12 +22,12 @@ body {
 nav {
   display: flex;
   gap: 1rem;
-  background: #FF0F0F;
+  background: #ED254E;
   padding: 1rem;
 }
 
 nav a {
-  color: white;
+  color: #F4FFFD;
   text-decoration: none;
 }
 
@@ -32,7 +40,12 @@ main {
 footer {
   padding: 2rem;
   text-align: center;
-  background: #C21F1F;
+  background: #011936;
+  color: #F4FFFD;
+}
+
+footer a {
+  color: #F9DC5C
 }
 
 
@@ -46,7 +59,7 @@ body.gallery main {
 
 body.gallery {
   margin: 0;
-  background: #111111;
+  background: #011936;
   color: white;
 }
 
@@ -55,7 +68,7 @@ header.minimal {
 }
 
 header.minimal a {
-  color: #FFFFFF;
+  color: #F9DC5C;
   text-decoration: none;
   font-weight: bold;
 }

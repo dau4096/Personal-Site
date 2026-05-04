@@ -2,17 +2,20 @@
 import flask;
 import markdown as md;
 import frontmatter as fm;
+import ffmpeg;
 import os;
+import hashlib;
+from pathlib import Path;
 
 
 app = flask.Flask(__name__);
 
 
-PAGES_DIR:str = "/pages";
-PROJECTS_DIR:str = "/pages/projects";
-GALLERY_DIR:str = "/pages/gallery";
-POSTS_DIR:str = "/pages/posts";
-AUDIO_DIR:str = "/static/audio";
+PAGES_DIR:str = "pages";
+PROJECTS_DIR:str = "pages/projects";
+GALLERY_DIR:str = "pages/gallery";
+POSTS_DIR:str = "pages/posts";
+MUSIC_DIR:str = "/home/dau/Music";
 
 
 
@@ -126,21 +129,72 @@ def audioIndex() -> str:
 
 @app.route("/audio/<dir>/<name>/")
 def audioPage(dir:str, name:str) -> str:
+	file_path = f"/audio/file/{dir}/{name}.mp3";
+
 	meta = {
 		"title": name,
 		"description": "Audio Playback",
 		"image": "/static/embed.png"
 	};
-	return flask.render_template("audio.html", meta=meta, file=f"{AUDIO_DIR}/{dir}/{name}.mp3");
+
+	return flask.render_template(
+		"audio.html",
+		meta=meta,
+		file=file_path
+	);
 
 
-@app.route("/audio/<dir>/<name>.mp3")
-def audioFile(dir:str, name:str):
-    return flask.send_from_directory("static/audio", f"{dir}/{name}.mp3");
+@app.route("/audio/file/<path:subpath>")
+def audio(subpath):
+	return flask.send_from_directory(
+		os.path.expanduser("~/Music"),
+		subpath
+	);
+
+
+@app.route("/audio/embed/<path:subpath>")
+def audio_embed(subpath:str):
+	base = Path(MUSIC_DIR).resolve();
+	target = (base / subpath).resolve();
+
+	if (not str(target).startswith(str(base))):
+	    abort(403);
+
+	image = ffmpeg.input("static/audioEmbed.png", loop=1);
+	audio = ffmpeg.input(f"{MUSIC_DIR}/{subpath}");
+
+	fileHash = hashlib.md5(f"{subpath}".encode()).hexdigest()
+	out:str = f"/home/dau/Videos/cache/{fileHash}.mp4";
+
+	if (not os.path.exists(out)):
+		#Create the cached version.
+		ffmpeg.output(
+		    image, audio, out,
+		    vcodec='libx264',
+		    preset='ultrafast',
+		    s='128x128',
+		    pix_fmt='yuv420p',
+		    tune='stillimage',
+		    acodec='aac',
+		    shortest=None
+		).run(overwrite_output=True);
+	return flask.send_from_directory(
+		os.path.expanduser("~/Videos/cache"),
+		f"{fileHash}.mp4"
+	);
+
+
+#Video
+@app.route("/video/file/<path:subpath>")
+def video(subpath):
+	return flask.send_from_directory(
+		os.path.expanduser("~/Videos/share"),
+		subpath
+	);
 
 
 
 
 
 if (__name__ == "__main__"):
-	app.run(debug=True);
+	app.run(host="0.0.0.0", port=5000, debug=True);
