@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Dau4096</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="audio-index">
+
+	<header>
+		<img src="/static/banner.png" class="banner">
+
+		<nav>
+			<a href="/">Home</a>
+			<a href="/projects/">Projects</a>
+			<a href="/gallery/">Gallery</a>
+			<a href="/posts/">Posts</a>
+			<a href="/audio/index/">Music</a>
+		</nav>
+	</header>
+
+	<main class="audio-index"><div class="audio-container">
+		<h1>Music Index</h1>
+		<hr>
+		<h2>Contents;</h2>
+		{% for entry in entries %}
+			{% if entry.isDirectory %}
+				<a href="/audio/index/{{ entry.path }}" class="directory">
+					{{ entry.name }}
+				</a>
+			{% else %}
+				<div class="track-row">
+					<a href="/audio/file/{{ entry.path }}" class="file">
+						"{{ entry.title }}"
+						{% if entry.artist %}
+							by "{{ entry.artist }}"
+						{% endif %}
+					</a>
+					<a href="/audio/download/{{ entry.path }}" class="download-button">
+						Download File
+					</a>
+				</div>
+			{% endif %}
+			<br>
+		{% endfor %}
+		{% if parent %}<h3><a href="/audio/index/{{ parent }}" class="directory">BACK</a></h3>{% endif %}
+	</div></main>
+
+	<footer>
+		<p>
+			<a href="https://github.com/dau4096">GitHub: dau4096</a> <br>
+			Email: mrdau4096@gmail.com <br>
+			Discord: __dau__ <br>
+			<a href="https://steamcommunity.com/id/J_Dau/">Steam: Dau</a>
+		</p>
+	</footer>
+
+</body>
+</html>
