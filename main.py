@@ -17,6 +17,7 @@ PROJECTS_DIR:str = "pages/projects";
 GALLERY_DIR:str = "pages/gallery";
 POSTS_DIR:str = "pages/posts";
 MUSIC_DIR:str = Path("~/Music").expanduser().resolve();
+VIDEO_DIR:str = Path("~/Videos/share").expanduser().resolve();
 
 
 AUDIO_DIR_MAP:dict[str, str] = {
@@ -203,23 +204,6 @@ def postPage(name:str) -> str:
 
 
 #Audio
-@app.route("/audio/<dir>/<name>/")
-def audioPage(dir:str, name:str) -> str:
-	file_path = f"/audio/file/{dir}/{name}.mp3";
-
-	meta = {
-		"title": name,
-		"description": "Audio Playback",
-		"image": "/static/embed.png"
-	};
-
-	return flask.render_template(
-		"audio.html",
-		meta=meta,
-		file=file_path
-	);
-
-
 @app.route("/audio/file/<path:subpath>")
 def audio(subpath):
 	return flask.send_from_directory(
@@ -285,22 +269,48 @@ def audioIndex(subpath:str=""):
 
 
 @app.route("/audio/download/<path:subpath>")
-def audio_download(subpath):
+def audioDownload(subpath:str):
 	return flask.send_from_directory(
 		MUSIC_DIR, subpath, as_attachment=True
 	);
 
-	
+
 
 
 #Video
 @app.route("/video/file/<path:subpath>")
-def video(subpath):
+def video(subpath:str):
 	return flask.send_from_directory(
-		os.path.expanduser("~/Videos/share"),
-		subpath
+		VIDEO_DIR, subpath
 	);
 
+
+@app.route("/video/share/<path:subpath>")
+def videoShare(subpath:str):
+	fullPath:str = os.path.join(VIDEO_DIR, subpath);
+	if (not os.path.exists(fullPath)): flask.abort(404);
+	sizeBytes:int = os.path.getsize(fullPath);
+
+	size:str = "";
+	if (sizeBytes < 1024): size = f"{sizeBytes}B"; #Less than 1KiB
+	elif (sizeBytes < (1024*1024)): size = f"{sizeBytes / 1024.0:.2f}KiB / [{sizeBytes / 1.0e3:.2f}KB]"; #Less than 1MiB
+	elif (sizeBytes < (1024*1024*1024)): size = f"{sizeBytes / (1024.0*1024.0):.2f}MiB / [{sizeBytes / 1.0e6:.2f}MB]"; #Less than 1GiB
+	else: size = f"{sizeBytes / (1024.0*1024.0*1024.0):.2f}GiB / [{sizeBytes / 1.0e9:.2f}GB]" #More than 1GiB
+
+	file:dict[str, str] = {
+		"name": subpath,
+        "size": size
+	};
+	return flask.render_template_string(loadHTML("templates/video-share.html"), path=subpath, file=file);
+
+
+
+@app.route("/video/download/<path:subpath>")
+def videoDownload(subpath):
+	fullPath:str = os.path.join(VIDEO_DIR, subpath);
+	return flask.send_from_directory(
+		VIDEO_DIR, subpath, as_attachment=True
+	);
 
 
 

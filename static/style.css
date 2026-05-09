@@ -180,6 +180,22 @@ body.audio-index a.file {
 }
 
 .download-button:hover {
-	background: #ff4f73;
+	background: #FF4F73;
 	text-decoration: none;
 }
+
+
+
+body.video-share main {
+	background: #ED254E;
+}
+.video-container {
+	background: #F4FFFD;
+	color: #F4FFFD;
+	margin: 0 auto;
+	padding: 2rem;
+	justify-content: space-between;
+	align-items: center;
+	display: flex;
+}
+

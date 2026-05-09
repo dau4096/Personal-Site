@@ -23,4 +23,5 @@ ___
 ## _My favourite pages;_
 - [My "Doom Project"](/projects/raycasting-renderer/)
 - [My current project](/projects/bsp-rendering/)
-- [A song I like :)](/audio/file/waitin/brake-check.mp3)
+- [My collection of songs](/audio/index/)
+- [An example video](/video/file/uk.fanim.mp4)
