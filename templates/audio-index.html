@@ -24,28 +24,78 @@
 	<main class="audio-index"><div class="audio-container">
 		<h1>Music Index</h1>
 		<hr>
-		<h2>Contents;</h2>
+		<div class="track-row">
+			<span><h2> Index </h2></span>
+			<span><h2> Title </h2></span>
+			<span><h2> Artists </h2></span>
+			<span><h2> Tags </h2></span>
+			<span></span>
+			<span><h2> Download </h2></span>
+		</div>
+
 		{% for entry in entries %}
 			{% if entry.isDirectory %}
-				<a href="/audio/index/{{ entry.path }}" class="directory">
-					{{ entry.name }}
-				</a>
-			{% else %}
+
 				<div class="track-row">
+					<span></span>
+
+					<a href="/audio/index/{{ entry.path }}" class="directory">
+						{{ entry.name }}
+					</a>
+
+					<span></span>
+					<span></span>
+					<audio></audio>
+					<span></span>
+				</div>
+
+			{% else %}
+
+				<div class="track-row">
+
+					<span>
+						{% if entry.trackID != 1e6 %}
+							<b>{{ entry.trackID }}</b>
+						{% endif %}
+					</span>
+
 					<a href="/audio/file/{{ entry.path }}" class="file">
 						"{{ entry.title }}"
-						{% if entry.artist %}
-							by "{{ entry.artist }}"
+					</a>
+
+					<span class="artists">
+						{% if entry.artists %}
+							<b><i>{{ entry.artists }}</i></b>
 						{% endif %}
-					</a>
+					</span>
+
+					<span class="tags">
+						{% if entry.tags %}
+							<b>{{ entry.tags }}</b>
+						{% endif %}
+					</span>
+
+					<audio controls preload="none">
+						<source src="/audio/file/{{ entry.path }}">
+					</audio>
+
 					<a href="/audio/download/{{ entry.path }}" class="download-button">
-						Download File
+						<b><ins>↓</ins> {{ entry.fileType }} <ins>↓</ins></b>
 					</a>
+
 				</div>
+
 			{% endif %}
 			<br>
 		{% endfor %}
-		{% if parent %}<h3><a href="/audio/index/{{ parent }}" class="directory">BACK</a></h3>{% endif %}
+
+		{% if parent %}
+			<h3>
+				<a href="/audio/index/{{ parent }}" class="directory">
+					BACK
+				</a>
+			</h3>
+		{% endif %}
 	</div></main>
 
 	<footer>

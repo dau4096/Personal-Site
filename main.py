@@ -7,6 +7,9 @@ import os;
 import hashlib;
 from pathlib import Path;
 from mutagen import File as MutagenFile;
+import re as regex;
+
+
 
 
 app = flask.Flask(__name__);
@@ -37,6 +40,7 @@ AUDIO_DIR_MAP:dict[str, str] = {
 	"tomb": "The Living Tombstone",
 	"vocaloid": "Vocaloid",
 	"waitin": "SAM WAITIN",
+	"genesis": "SEGA Genesis",
 
 	#All of the UK subfolders
 	"ultrakill": "ULTRAKILL OST",
@@ -110,6 +114,19 @@ def parseTrackID(track):
 		return int(track);
 	except ValueError:
 		return 1e6;
+
+
+
+def getTitleTag(title:str) -> str:
+	tags:list[str] = [
+		f"[{t.upper().replace(' ', '-')}]" for t in regex.findall(
+			r"\[([^\[\]]+)\]", title
+		)
+	];
+
+	fixedTitle:str = regex.sub(r"[^\S\r\n]?\[([^\[\]]+)\][^\S\r\n]?", "", title); #Remove from the title
+
+	return ", ".join(tags), fixedTitle;
 
 
 
@@ -236,17 +253,25 @@ def audioIndex(subpath:str=""):
 		};
 
 		if (item.is_file()):
-			if (not (str(item).endswith(".mp3") or str(item).endswith(".wav") or str(item).endswith(".ogg"))): continue;
-			meta = getMP3meta(item)
+			fileType:str = entry["path"].split(".")[-1].lower();
+			if (fileType not in ("mp3", "wav", "ogg")): continue;
+
+			meta = getMP3meta(item);
 
 			entry["title"] = meta.get("title", item.stem);
-			entry["artist"] = meta.get("artist", "");
+			artists:list[str] = meta.get("artist", "").split(",");
+			entry["artists"] = " / ".join([f"\"{x.strip()}\"" for x in artists]) if (len(artists) > 0) else None;
 			entry["album"] = meta.get("album", "");
 			entry["track"] = meta.get("track", "");
+			entry["fileType"] = fileType.upper();
 
-			entry["track_num"] = parseTrackID(entry["track"]);
+			entry["tags"], entry["title"] = getTitleTag(entry["title"]);
+
+			entry["trackID"] = parseTrackID(entry["track"]);
 
 		elif (entry["name"] in AUDIO_DIR_MAP): entry["name"] = AUDIO_DIR_MAP[entry["name"]];
+
+		print(entry)
 
 		entries.append(entry);
 
@@ -254,7 +279,7 @@ def audioIndex(subpath:str=""):
 	entries.sort(
 		key=lambda e: (
 			not e["isDirectory"],
-			e.get("track_num", 1e6),
+			e.get("trackID", 1e6),
 			e["name"].lower()
 		)
 	)

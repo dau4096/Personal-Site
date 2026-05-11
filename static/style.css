@@ -1,3 +1,13 @@
+:root {
+	--red: #ED254E;
+	--red-highlight: #FF4F73;
+	--yellow: #F9DC5C;
+	--white: #F4FFFD;
+	--navy: #011936;
+	--grey: #465362;
+}
+
+
 html, body {
 	height: 100%;
 }
@@ -10,7 +20,7 @@ body {
 }
 
 body a {
-	color: #465362;
+	color: var(--grey);
 	font-weight: bolder;
 	text-decoration: none;
 	font-style: italic;
@@ -21,23 +31,23 @@ body a:hover {
 }
 
 code {
-	background: #011936;
+	background: var(--navy);
 	padding: 0.1em 0.2em;
 	border-radius: 4px;
 	font-family: monospace;
-	color: #F4FFFD;
+	color: var(--white);
 }
 
 hr {
 	width: 100vw;
 	margin-left: calc(-50vw + 50%);
-	color: #ED254E;
+	color: var(--red);
 }
 
 h1, h2, h3, h4 {
 	font-weight: bolder;
 	text-decoration: underline;
-	color: #ED254E
+	color: var(--red)
 }
 
 .banner {
@@ -51,12 +61,12 @@ h1, h2, h3, h4 {
 nav {
 	display: flex;
 	gap: 1rem;
-	background: #ED254E;
+	background: var(--red);
 	padding: 1rem;
 }
 
 nav a {
-	color: #F4FFFD;
+	color: var(--white);
 	text-decoration: none;
 }
 
@@ -73,14 +83,14 @@ footer {
 	padding: 2rem;
 	width: 100%;
 	text-align: center;
-	background: #011936;
-	color: #F9DC5C;
+	background: var(--navy);
+	color: var(--yellow);
 	font-weight: bolder;
 	font-style: italic;
 }
 
 footer a {
-	color: #F9DC5C
+	color: var(--yellow)
 }
 
 footer a:hover {
@@ -98,7 +108,7 @@ body.gallery main {
 
 body.gallery {
 	margin: 0;
-	background: #011936;
+	background: var(--navy);
 	color: white;
 }
 
@@ -107,7 +117,7 @@ header.minimal {
 }
 
 header.minimal a {
-	color: #F9DC5C;
+	color: var(--yellow);
 	text-decoration: none;
 	font-weight: bold;
 }
@@ -135,17 +145,17 @@ header.minimal a {
 
 
 body.audio-index main {
-	background: #ED254E;
+	background: var(--red);
 }
 .audio-container {
-	background: #F4FFFD;
-	color: #F4FFFD;
+	background: var(--white);
+	color: var(--white);
 	margin: 0 auto;
 	padding: 2rem;
 }
 
 body.audio-index a.directory {
-    color: #465362;
+    color: var(--grey);
     font-weight: bolder;
     display: block;
     padding: 0.0rem;
@@ -153,7 +163,7 @@ body.audio-index a.directory {
 }
 
 body.audio-index a.file {
-    color: #011936;
+    color: var(--navy);
     font-weight: normal;
     display: block;
     padding: 0.0rem;
@@ -161,15 +171,35 @@ body.audio-index a.file {
 
 
 .track-row {
-	display: flex;
+	display: grid;
+	grid-template-columns: 0.1fr 2fr 2fr 1fr 300px 140px;
 	align-items: center;
-	justify-content: space-between;
-	gap: 1rem;
-	padding: 0.2rem 0;
+	column-gap: 1rem;
+	color: var(--navy);
+
+	padding: 0.5rem 0;
+}
+
+.track-row audio {
+	height: 28px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+
+	vertical-align: middle;
+}
+
+.file {
+	overflow-wrap: anywhere;
+}
+
+.artists,
+.tags {
+	white-space: nowrap;
 }
 
 .download-button {
-	background: #ED254E;
+	background: var(--red);
 	color: white !important;
 	padding: 0.3rem 0.7rem;
 	border-radius: 6px;
@@ -177,21 +207,26 @@ body.audio-index a.file {
 	font-size: 0.9rem;
 	font-style: normal;
 	white-space: nowrap;
+	justify-self: end;
+	display: block;
+	width: 100%;
+	text-align: center;
+	box-sizing: border-box;
 }
 
 .download-button:hover {
-	background: #FF4F73;
+	background: var(--red-highlight);
 	text-decoration: none;
 }
 
 
 
 body.video-share main {
-	background: #ED254E;
+	background: var(--red);
 }
 .video-container {
-	background: #F4FFFD;
-	color: #F4FFFD;
+	background: var(--white);
+	color: var(--white);
 	margin: 0 auto;
 	padding: 2rem;
 	justify-content: space-between;
